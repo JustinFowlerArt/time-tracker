@@ -15,6 +15,10 @@ type TimeTracked = {
     previous: number;
 };
 
-const App = () => <Dashboard data={data} />;
+const App = () => (
+    <div className='app'>
+        <Dashboard data={data} />
+    </div>
+);
 
 export default App;

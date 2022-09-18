@@ -7,7 +7,7 @@ interface Props {
 }
 
 const Dashboard = ({ data }: Props) => (
-    <main>
+    <main className='dashboard'>
         <Profile />
         <section className='activity'>
             {data.map(activity => (
