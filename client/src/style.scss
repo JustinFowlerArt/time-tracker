@@ -1,0 +1,119 @@
+@use 'base';
+
+// Main styles
+.profile {
+    @extend %rounded;
+    position: relative;
+    height: 220px;
+    background-color: base.$dark-blue;
+    margin-bottom: 1.5rem;
+
+    &__info {
+        @extend %rounded;
+        @extend %pad;
+        display: flex;
+        position: absolute;
+        align-items: center;
+        width: 100%;
+        background-color: base.$blue;
+        height: calc(100% - (base.$spacing * 3));
+        @include base.breakpoint(tablet) {
+            height: calc(100% - (base.$spacing * 2.5));
+        }
+    }
+
+    &__photo {
+        border: 0.25rem solid white;
+        border-radius: 50%;
+        margin-right: 1rem;
+        height: 80%;
+        @include base.breakpoint(tablet) {
+            height: 100%
+        }
+    }
+
+    &__details {
+        h4 {
+            color: base.$pale-blue;
+        }
+    }
+
+    &__controls {
+        @extend %flex-between;
+        @extend %pad;
+        height: 100%;
+        align-items: flex-end;
+
+        button {
+            color: base.$desaturated-blue;
+
+            &:hover {
+                color: white;
+            }
+        }
+    }
+}
+
+.activity {
+    display: grid;
+    gap: base.$spacing;
+    @include base.breakpoint(tablet) {
+        gap: base.$spacing;
+    }
+
+    @for $i from 1 through 6 {
+        &__card:nth-child(6n + #{$i}) {
+            background-color: nth(base.$activity-colors, $i);
+        }
+    }
+
+    &__card {
+        @extend %rounded;
+        position: relative;
+        background: no-repeat top -0.5rem right 1.25rem;
+        height: 170px;
+        @include base.breakpoint(tablet) {
+            height: 300px;
+        }
+
+        h3 {
+            font-weight: 500;
+        }
+    }
+
+    &__info {
+        @extend %rounded;
+        @extend %pad;
+        background-color: base.$dark-blue;
+        position: absolute;
+        bottom: 0;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: calc(100% - (base.$spacing * 1.75));
+        @include base.breakpoint(tablet) {
+            height: calc(100% - (base.$spacing * 2.5));
+        }
+
+        &:hover {
+            filter: brightness(175%);
+        }
+    }
+
+    &__details {
+        @extend %flex-between;
+        align-items: center;
+        width: 100%;
+        margin: 0.25rem 0;
+
+        h4 {
+            color: base.$pale-blue;
+            text-align: right;
+        }
+    }
+}
+
+.icon:hover {
+    filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7500%)
+        hue-rotate(136deg) brightness(200%) contrast(100%);
+}

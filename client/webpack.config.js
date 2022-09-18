@@ -1,6 +1,7 @@
 const { resolve } = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const TerserWebpackPlugin = require('terser-webpack-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
 
 const isProd = process.env.NODE_ENV === 'production';
 
@@ -25,8 +26,8 @@ const config = {
                 exclude: /node_modules/,
             },
             {
-                test: /\.css$/,
-                use: ['style-loader', 'css-loader'],
+                test: /\.s[ac]ss$/i,
+                use: ['style-loader', 'css-loader', 'sass-loader'],
             },
         ],
     },
@@ -35,6 +36,10 @@ const config = {
             template: 'src/index.html',
             filename: 'index.html',
             inject: 'body',
+        }),
+
+        new CopyPlugin({
+            patterns: [{ from: 'src/images', to: 'images' }],
         }),
     ],
 };

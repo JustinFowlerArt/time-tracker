@@ -1,0 +1,97 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Rubik:300,400,500');
+$font-stack: Rubik, sans-serif;
+$mobile-fonts: (36px, 24px, 18px, 16px);
+$desktop-fonts: (48px, 40px, 18px, 16px);
+
+// Colors
+$blue: hsl(246, 80%, 60%);
+$very-dark-blue: hsl(226, 43%, 10%);
+$dark-blue: hsl(235, 46%, 20%);
+$desaturated-blue: hsl(235, 45%, 61%);
+$pale-blue: hsl(236, 100%, 87%);
+$activity-colors: (
+    hsl(15, 100%, 70%),
+    hsl(195, 74%, 62%),
+    hsl(348, 100%, 68%),
+    hsl(145, 58%, 55%),
+    hsl(264, 64%, 52%),
+    hsl(43, 84%, 65%)
+);
+
+$spacing: 1.5rem;
+
+// Extensions
+@mixin breakpoint($size) {
+    @if $size == tablet {
+        @media (min-width: 768px) {
+            @content;
+        }
+    } @else if $size == laptop {
+        @media (min-width: 1024px) {
+            @content;
+        }
+    } @else if $size == desktop {
+        @media (min-width: 1440px) {
+            @content;
+        }
+    }
+}
+
+@include breakpoint(tablet) {
+    $spacing: 2rem;
+}
+
+%rounded {
+    border-radius: 1.25rem;
+}
+
+%flex-between {
+    display: flex;
+    justify-content: space-between;
+}
+
+%pad {
+    padding: $spacing;
+}
+
+// Base styles
+* {
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;
+}
+
+body {
+    @extend %pad;
+    font: 100% $font-stack;
+    background-color: $very-dark-blue;
+    color: white;
+    padding-top: 5rem;
+}
+
+h1,
+h2 {
+    font-weight: 300;
+}
+
+h3,
+h4 {
+    font-weight: 400;
+}
+
+@for $i from 1 through 4 {
+    h#{$i} {
+        font-size: nth($mobile-fonts, $i);
+        @include breakpoint(tablet) {
+            font-size: nth($desktop-fonts, $i);
+        }
+    }
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    background: none;
+    font-size: nth($mobile-fonts, 3);
+}
