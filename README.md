@@ -13,8 +13,6 @@ This is a solution to the [Time tracking dashboard challenge on Frontend Mentor]
   - [Useful resources](#useful-resources)
 - [Author](#author)
 
-**Note: Delete this note and update the table of contents based on what sections you keep.**
-
 ## Overview
 
 ### The challenge
@@ -27,7 +25,7 @@ Users should be able to:
 
 ### Screenshot
 
-![](./client/src/design/final-mobile.png)
+<img src="./client/src/design/final-mobile.png" alt="mobile design" width="375"/>
 ![](./client/src/design/final-desktop.png)
 
 ## My process
