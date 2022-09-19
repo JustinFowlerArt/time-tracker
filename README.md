@@ -26,6 +26,7 @@ Users should be able to:
 ### Screenshot
 
 <img src="./client/src/design/final-mobile.png" alt="mobile design" width="375"/>
+
 ![](./client/src/design/final-desktop.png)
 
 ## My process
