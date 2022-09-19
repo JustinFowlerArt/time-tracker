@@ -45,6 +45,7 @@
         width: 100%;
         background-color: base.$blue;
         height: calc(100% - (base.$mobile-spacing * 3));
+
         @include base.breakpoint(xl) {
             flex-direction: column;
             align-items: flex-start;
@@ -76,7 +77,11 @@
         height: 100%;
         align-items: flex-end;
 
-        button {
+        &_active {
+            color: white;
+        }
+
+        &_inactive {
             color: base.$desaturated-blue;
 
             &:hover {
@@ -88,7 +93,7 @@
             justify-content: center;
 
             button {
-                margin: 0 base.$desktop-spacing / 1.5;
+                margin: 0 calc(base.$desktop-spacing / 1.5);
             }
         }
 
@@ -98,7 +103,7 @@
             align-items: flex-start;
 
             button {
-                margin-top: base.$desktop-spacing / 1.5;
+                margin: calc(base.$desktop-spacing / 1.5) 0 0 0;
             }
         }
     }
@@ -107,6 +112,7 @@
 .activity {
     display: grid;
     gap: base.$mobile-spacing;
+
     @include base.breakpoint(md) {
         grid-template-columns: repeat(2, minmax(0, 1fr));
         grid-column: span 2 / span 2;
@@ -129,6 +135,7 @@
         position: relative;
         background: no-repeat top -0.5rem right 1.25rem;
         height: 170px;
+
         @include base.breakpoint(xl) {
             height: 260px;
         }
@@ -168,11 +175,6 @@
             margin-bottom: 0.5rem;
         }
 
-        h4 {
-            color: base.$pale-blue;
-            text-align: right;
-        }
-
         @include base.breakpoint(xl) {
             &:last-child {
                 align-items: flex-start;
@@ -182,6 +184,11 @@
             h4 {
                 margin-top: 0.75rem;
             }
+        }
+
+        h4 {
+            color: base.$pale-blue;
+            text-align: right;
         }
     }
 }

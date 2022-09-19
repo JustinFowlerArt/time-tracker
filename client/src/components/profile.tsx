@@ -1,4 +1,9 @@
-const Profile = () => (
+interface Props {
+    handleChange: (time: string) => void;
+    timeframe: string;
+}
+
+const Profile = ({ handleChange, timeframe }: Props) => (
     <header className='profile'>
         <div className='profile__info'>
             <img
@@ -11,9 +16,36 @@ const Profile = () => (
             </div>
         </div>
         <div className='profile__controls'>
-            <button>Daily</button>
-            <button>Weekly</button>
-            <button>Monthly</button>
+            <button
+                className={
+                    timeframe === 'daily'
+                        ? 'profile__controls_active'
+                        : 'profile__controls_inactive'
+                }
+                onClick={() => handleChange('daily')}
+            >
+                Daily
+            </button>
+            <button
+                className={
+                    timeframe === 'weekly'
+                        ? 'profile__controls_active'
+                        : 'profile__controls_inactive'
+                }
+                onClick={() => handleChange('weekly')}
+            >
+                Weekly
+            </button>
+            <button
+                className={
+                    timeframe === 'monthly'
+                        ? 'profile__controls_active'
+                        : 'profile__controls_inactive'
+                }
+                onClick={() => handleChange('monthly')}
+            >
+                Monthly
+            </button>
         </div>
     </header>
 );

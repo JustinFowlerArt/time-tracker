@@ -3,11 +3,13 @@ import data from './data.json';
 
 export type Activity = {
     title: string;
-    timeframes: {
-        daily: TimeTracked;
-        weekly: TimeTracked;
-        monthly: TimeTracked;
-    };
+    timeframes: Timeframe
+};
+
+export type Timeframe = {
+    daily: TimeTracked;
+    weekly: TimeTracked;
+    monthly: TimeTracked;
 };
 
 type TimeTracked = {
