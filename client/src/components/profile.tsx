@@ -9,10 +9,11 @@ const Profile = ({ handleChange, timeframe }: Props) => (
             <img
                 className='profile__photo'
                 src='/images/image-jeremy.png'
+                alt='Profile photo'
             ></img>
             <div className='profile__details'>
-                <h4>Report for</h4>
-                <h2>Jeremy Robson</h2>
+                <h5>Report for</h5>
+                <h4>Jeremy Robson</h4>
             </div>
         </div>
         <div className='profile__controls'>

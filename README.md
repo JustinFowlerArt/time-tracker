@@ -7,6 +7,7 @@ This is a solution to the [Time tracking dashboard challenge on Frontend Mentor]
 - [Overview](#overview)
   - [The challenge](#the-challenge)
   - [Screenshot](#screenshot)
+  - [Links](#links)
 - [My process](#my-process)
   - [Built with](#built-with)
   - [What I learned](#what-i-learned)
@@ -28,6 +29,10 @@ Users should be able to:
 <img src="./client/src/design/final-mobile.png" alt="mobile design" width="375"/>
 
 ![](./client/src/design/final-desktop.png)
+
+### Links
+- [Solution URL](https://www.frontendmentor.io/solutions/time-tracker-with-react-typescript-sass-and-bem-WUjP1EZCxK)
+- [Live Site URL](https://time-tracker.justinfowlerart.com/)
 
 ## My process
 

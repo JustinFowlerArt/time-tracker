@@ -1,8 +1,8 @@
 // Fonts
 @import url('https://fonts.googleapis.com/css?family=Rubik:300,400,500');
 $font-stack: Rubik, sans-serif;
-$mobile-fonts: (36px, 24px, 18px, 16px);
-$desktop-fonts: (56px, 44px, 18px, 16px);
+$mobile-fonts: (36px, 16px, 18px, 24px, 16px);
+$desktop-fonts: (56px, 16px, 18px, 44px, 16px);
 
 // Colors
 $blue: hsl(246, 80%, 60%);
@@ -73,16 +73,17 @@ body {
 }
 
 h1,
-h2 {
+h4 {
     font-weight: 300;
 }
 
+h2,
 h3,
-h4 {
+h5 {
     font-weight: 400;
 }
 
-@for $i from 1 through 4 {
+@for $i from 1 through 5 {
     h#{$i} {
         font-size: nth($mobile-fonts, $i);
         @include breakpoint(xl) {

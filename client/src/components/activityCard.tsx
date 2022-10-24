@@ -18,7 +18,7 @@ const ActivityCard = ({ activity, timeframe }: Props) => (
             <div className='activity__details'>
                 <h3>{activity.title}</h3>
                 <button>
-                    <img className='icon' src='/images/icon-ellipsis.svg'></img>
+                    <img className='icon' src='/images/icon-ellipsis.svg' alt={`${activity.title} options`} />
                 </button>
             </div>
             <div className='activity__details'>
@@ -26,7 +26,7 @@ const ActivityCard = ({ activity, timeframe }: Props) => (
                     {activity.timeframes[timeframe as keyof Timeframe].current}
                     hrs
                 </h1>
-                <h4>
+                <h2>
                     {timeframe === 'daily'
                         ? 'Yesterday - '
                         : timeframe === 'weekly'
@@ -34,7 +34,7 @@ const ActivityCard = ({ activity, timeframe }: Props) => (
                         : 'Last Month - '}
                     {activity.timeframes[timeframe as keyof Timeframe].previous}
                     hrs
-                </h4>
+                </h2>
             </div>
         </div>
     </div>
